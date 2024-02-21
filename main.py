@@ -1,10 +1,15 @@
 import cv2
 
 cap = cv2.VideoCapture(0)
-cap.set(3, 1280)
-cap.set(4, 720)
+cap.set(3, 640)
+cap.set(4, 480)
 
+img_bg = cv2.imread('Resources/background.png')
 while True:
     success, img = cap.read()
-    cv2.imshow("Face Attendance", img)
+
+    img_bg[162:162+480, 55:55+640] = img
+    cv2.imshow("Webcam", img)
+    cv2.imshow("Face Attendance", img_bg)
     cv2.waitKey(1)
+
