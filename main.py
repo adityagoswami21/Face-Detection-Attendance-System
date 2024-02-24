@@ -16,6 +16,7 @@ while True:
     success, img = cap.read()
 
     img_bg[162:162+480, 55:55+640] = img
+    img_bg[44:44 + 633, 808:808 + 414] = img_mode_list[2]
     cv2.imshow("Webcam", img)
     cv2.imshow("Face Attendance", img_bg)
     cv2.waitKey(1)
