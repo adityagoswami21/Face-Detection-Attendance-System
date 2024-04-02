@@ -3,8 +3,12 @@ import face_recognition
 import os
 import pickle
 
-folder_mode_path = 'Resources/Modes'
-mode_path_list = os.listdir(folder_mode_path)
-img_mode_list = []
-for path in mode_path_list:
-    img_mode_list.append(cv2.imread(os.path.join(folder_mode_path, path)))
+folder_path = 'Images'
+path_list = os.listdir(folder_path)
+print(path_list)
+img_list = []
+student_ids = []
+for path in path_list:
+    img_list.append(cv2.imread(os.path.join(folder_path, path)))
+    student_ids.append(os.path.splitext(path)[0])
+print(len(img_list))
